@@ -10,11 +10,11 @@ module.exports = class extends Event {
 
   execute = async () => {
     let embed = new MessageEmbed()
-      .setColor('GREEN')
+      .setColor('WHITE')
       .setTitle('Online!')
       .setDescription(`**Iniciado por \`BobyCake\`**`)
       .addField('Usuários', `${this.client.users.cache.size}`)
-      .addField('Loadeds', 'Comandos\nEventos')
+      .addField('Loadeds', '✅Comandos\n✅Eventos')
       .setThumbnail(this.client.user.avatarURL({
         dynamic: true,
         size: 1024,
