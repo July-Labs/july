@@ -4,16 +4,17 @@ const { Command, Embed } = require('../../../structures/index.js')
 const Vanilla = Command.Vanilla
 
 module.exports = class extends Vanilla {
-  constructor() {
+  constructor(ctx) {
     super({
       name: 'ping',
       aliases: ['pin'],
       avaliable: true
     })
   }
-  async run(ctx) {
+  async run() {
+    
     let embed = new Embed(ctx.message.author)
-      .setTitle(`🏓 Meu ping está em ${ctx.client.ws.ping}ms\``)
+      .setTitle(this.client.ws.ping)
 
     return ctx.message.reply({
       embeds: [embed]
