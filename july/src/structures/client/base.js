@@ -56,11 +56,11 @@ module.exports = class extends Client {
 
           if (file.endsWith(".js")) {
             vanilla = require(path.join(commands_path, local, file));
-            NewVanilla = new vanilla()
+            let Newvanilla = new vanilla()
             this.vanilla.set(Newvanilla.name, vanilla);
 
             for (let aliase of Newvanilla.aliases) {
-              this.aliases.set(aliase, vanilla.name);
+              this.aliases.set(aliase, Newvanilla.name);
             }
           }
         }

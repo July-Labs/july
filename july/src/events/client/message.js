@@ -22,16 +22,18 @@ module.exports = class extends Event {
     if (cmd.length === 0) return;
 
     let command = this.client.vanilla.get(cmd)
-    console.log(command)
-    let ctx = {
+    
+    if (!command) command = this.client.vanilla.get(this.client.aliases.get(cmd))
+    
+		  let ctx = {
       client: this.client,
       message: message,
       args: args,
       locale: locale
     }
     command = new command(ctx)
-    if (!command) command = this.client.vanilla.get(this.client.aliases.get(cmd))
-    if (!command) return
+	//console.log(command)
+		if (!command) return
 
     try {
       command.run()
