@@ -1,5 +1,5 @@
 module.exports = {
-  ping = {
+  ping:{
     text: 'Meu ping está em \`{ping}ms\`'
   }
 }
