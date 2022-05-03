@@ -13,8 +13,10 @@ module.exports = class extends Vanilla {
 
   }
   async run(){
+		var desc = this.ctx.locale.commands.ping.text.replace('{ping}',this.ctx.client.ws.ping)
+		console.log(desc)
 		let embed = new Embed(this.ctx.message.author)
-		.setDescription(`${this.ctx.client.ws.ping}`)
+		.setDescription(`${desc}`)
 		this.ctx.message.reply({
 			embeds: [embed]
 		})
