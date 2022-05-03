@@ -20,7 +20,7 @@ module.exports = class extends Client {
     this.vanilla = new Collection();
     this.aliases = new Collection();
   }
-  loadslash() {
+  LoadSlash() {
     try {
       let folder = 'src/commands/slash'
       const categories = fs.readdirSync(folder)
@@ -40,7 +40,11 @@ module.exports = class extends Client {
       console.log('❌[Slash]: Erro ao carregar os comandos: ' + e)
     }
   }
-  loadvanilla() {
+  SetSlash() {
+    this.application.commands.set(this.commands)
+  }
+
+  LoadVanilla() {
     try {
       const commands_path = path.join(__dirname, "..", "..", "commands", "vanilla");
 
@@ -66,7 +70,7 @@ module.exports = class extends Client {
       console.log('❌[Prefix]: Erro ao carregar os comandos: ' + e)
     }
   }
-  loadevents() {
+  LoadEvents() {
     try {
       let folder = 'july/src/events'
       const categories = fs.readdirSync(folder)
@@ -86,8 +90,9 @@ module.exports = class extends Client {
       console.log('❌[Events]: Erro ao carregar os eventos: ' + e)
     }
   }
-  setslash() {
-    this.application.commands.set(this.commands) 
-  }
 
+  LoadPlugins(plugin) {
+    this.plugins = plugin
+    
+  }
 }
