@@ -1,11 +1,13 @@
 const { Base } = require('./structures/index.js')
 const { join } = require('path')
-const locale = require(join(process.cwd(), 'lib/locale/index.js'))
-var a = locale('teste')
-var July = new Base()
-console.log(a)
+const July = new Base()
+
+const Locale = require(join(process.cwd(), 'lib/locale/index.js'))
+const Plugins = {
+  locale: Locale
+}
+
 July.LoadEvents()
 July.LoadVanilla()
+July.LoadPlugins(Plugins)
 July.login(process.env.LOGIN)
-
-console.log(July.plugins)

@@ -10,7 +10,7 @@ module.exports = class extends Event {
 
   execute = async (message) => {
 
-    let locale = 2 // new this.client.plugins.locale()
+    let locale = new this.client.plugins.locale(message.guild.id)
 
     let prefix = process.env.PREFIX
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
