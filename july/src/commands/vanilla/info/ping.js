@@ -1,6 +1,7 @@
 'use strict'
 
-const { Command, Embed } = require('../../../structures/index.js')
+const { MessageEmbed } = require('discord.js')
+const { Command } = require('../../../structures/index.js')
 const Vanilla = Command.Vanilla
 
 module.exports = class extends Vanilla {
@@ -14,16 +15,17 @@ module.exports = class extends Vanilla {
   }
   async run() {
     var desc = this.ctx.locale.command.ping.text
-    .replace(
-      '{ping}',
-      this.ctx.client.ws.ping
-    )
+      .replace(
+        '{ping}',
+        this.ctx.client.ws.ping
+      )
 
-    var embed = new Embed(this.ctx.message.author)
+    var embed = new MessageEmbed()
+      .setColor('RED')
       .setDescription(`${desc}`)
 
     this.ctx.message.reply({
       embeds: [embed]
-    })
+    }).then(m => m.react('🏓'))
   }
 }
