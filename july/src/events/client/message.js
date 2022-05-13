@@ -12,7 +12,7 @@ module.exports = class extends Event {
 
     let locale = this.client.plugins.locale(message.guild.id)
 
-    let prefix = process.env.PREFIX
+    let prefix = ';'
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase()
 
@@ -32,10 +32,16 @@ module.exports = class extends Event {
       locale: locale
     }
     command = new command(ctx)
-	//console.log(command)
+
 		if (!command) return
 
     try {
+      console.log(command.avaliable)
+      if (command.avaliable == false) {
+        return message.reply({
+          content: 'Este comando foi desativado por meu criador'
+        })
+      }
       command.run()
     } catch (err) {
       console.error('Erro:' + err);

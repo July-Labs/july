@@ -4,6 +4,7 @@ const { Base } = require('./structures/index.js')
 const { join } = require('path')
 const July = new Base()
 
+const dotenv = require('dotenv').config()
 const Locale = require(join(process.cwd(), 'lib/locale/index.js'))
 const Plugins = {
   locale: Locale
