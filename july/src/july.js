@@ -1,3 +1,5 @@
+'use strict'
+
 const { Base } = require('./structures/index.js')
 const { join } = require('path')
 const July = new Base()

@@ -1,16 +1,17 @@
 {
   "dependencies": {
     "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "nodejs": "^0.0.0",
     "nodemon": "^2.0.16"
   },
   "name": "july",
   "version": "1.0.0",
   "description": "A bot",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "nodemon index.js",
-		 "start": "nodemon index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "bot"
