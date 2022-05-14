@@ -11,5 +11,6 @@ module.exports = {
   avatar: {
     desc: '{author} olha aqui esse lindo avatar!!'
   },
-  uptime: 'Estou online ha \`{time}\` segundos'
+  uptime: 'Estou online ha \`{time}\` segundos',
+  servericon: 'Este servidor nao possui um icone'
 }
