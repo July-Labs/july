@@ -12,5 +12,28 @@ module.exports = {
     desc: '{author} olha aqui esse lindo avatar!!'
   },
   uptime: 'Estou online ha \`{time}\` segundos',
-  servericon: 'Este servidor nao possui um icone'
+  servericon: 'Este servidor nao possui um icone',
+  userinfo: {
+    presence: {
+      status: {
+        dnd: 'Ocupado',
+        idle: 'Ausente',
+        stream: 'Transmitindo',
+        offline: 'Offline',
+        online: 'Online'
+      },
+      activity: {
+        PLAYING: '🎮 jogando',
+        LISTENING: '🎧 ouvindo',
+        WATCHING: '📺 assistindo',
+        STREAMING: '🛰 streamando'
+      }
+    },
+    fields:[
+      ['💻 Id','{id}'],
+      ['Nick','{nick}'],
+      ['🟢 Status','{statusss'],
+      ['🎮 Atividade','{atv}']
+    ]
+  }
 }
